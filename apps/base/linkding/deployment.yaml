@@ -21,6 +21,6 @@ spec:
             - name: linkding-data
               mounthPath: /etc/linkding/data
       volumes:
-      - name: linkding-data
-        persistentVolumeClaim:
-          claimName: linkding-pv-claim
+        - name: linkding-data
+          persistentVolumeClaim:
+            claimName: linkding-pv-claim
