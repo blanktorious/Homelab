@@ -24,12 +24,15 @@ spec:
             - containerPort: 8081
           
           volumeMounts:
-            - name: my-portfolio-data
+            - name: my-emptydir-volume
               mountPath: /etc/my-portfolio/data
           
           securityContext:
             allowPrivilegeEsclation: false
+      # volumes:
+      #   - name: my-portfolio-data
+      #     persistentVolumeClaim:
+      #       claimName: my-portfolio-pv-claim
       volumes:
-        - name: my-portfolio-data
-          persistentVolumeClaim:
-            claimName: my-portfolio-pv-claim
+      - name: my-emptydir-volume
+        emptyDir: {}
