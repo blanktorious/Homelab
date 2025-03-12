@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-portfolio
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-portfolio
+  template:
+    metadata:
+      labels:
+        app: my-portfolio
+
+    spec:
+      securityContext:
+        fsGroup: 33 # www-data group ID
+        runAsUser: 33 # www-data user ID
+        runAsGroup: 33 # www-data group ID
+      containers:
+        - name: my-portfolio
+          image: blanktorious/my-port-v1:latest
+          ports:
+            - containerPort: 8081
+          
+          volumeMounts:
+            - name: my-portfolio-data
+              mountPath: /etc/my-portfolio/data
+          
+          securityContext:
+            allowPrivilegeEsclation: false
+      volumes:
+        - name: my-portfolio-data
+          persistentVolumeClaim:
+            claimName: my-portfolio-pv-claim
