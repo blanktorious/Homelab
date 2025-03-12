@@ -13,10 +13,10 @@ spec:
         app: my-portfolio
 
     spec:
-      # securityContext:
-      #   runAsUser: 1000
-      #   runAsGroup: 1000
-      #   fsGroup: 1000
+      securityContext:
+        runAsUser: 101
+        runAsGroup: 101
+        fsGroup: 101
       containers:
         - name: my-portfolio
           image: blanktorious/my-port-v1:1.4
