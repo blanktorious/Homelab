@@ -14,9 +14,9 @@ spec:
 
     spec:
       securityContext:
-        fsGroup: 33 # www-data group ID
-        runAsUser: 33 # www-data user ID
-        runAsGroup: 33 # www-data group ID
+        runAsUser: 101  # UID for nginx
+        runAsGroup: 101  # GID for nginx
+        fsGroup: 101  # Ensures files created in shared volumes have correct group
       containers:
         - name: my-portfolio
           image: blanktorious/my-port-v1:latest

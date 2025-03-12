@@ -28,4 +28,3 @@ Tools
 | **K3s**    | Lightweight Kubernetes distribution for easy deployment | Version: v1.31.6+k3s1 |
 | **FluxCD** | GitOps tool for continuous deployment and management | Version: v2.5.1 |
 | **Cloudflare** | Used for hosting applications publicly | Managed DNS and SSL |
-
