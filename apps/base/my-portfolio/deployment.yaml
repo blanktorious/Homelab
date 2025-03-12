@@ -14,9 +14,9 @@ spec:
 
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
-        fsGroup: 1000
+         runAsUser: 1000
+         runAsGroup: 1000
+         fsGroup: 1000
       containers:
         - name: my-portfolio
           image: blanktorious/my-port-v1:1.4
@@ -24,15 +24,24 @@ spec:
             - containerPort: 8081
           
           volumeMounts:
-            - name: my-emptydir-volume
-              mountPath: /etc/my-portfolio/data
+            # - name: my-emptydir-volume
+            #   mountPath: /etc/my-portfolio/data
+            - mountPath: /etc/nginx/conf.d/
+              name: nginx-dir
+            - mountPath: /var/cache/nginx/client_temp
+              name: nginx-empty
+            - mountPath: /var/run/
+              name: nginx-run
           
           securityContext:
             allowPrivilegeEsclation: false
-      # volumes:
-      #   - name: my-portfolio-data
-      #     persistentVolumeClaim:
-      #       claimName: my-portfolio-pv-claim
       volumes:
-      - name: my-emptydir-volume
-        emptyDir: {}
+        # - name: my-portfolio-data
+        #   persistentVolumeClaim:
+        #     claimName: my-portfolio-pv-claim
+        - name: nginx-dir
+          emptyDir: { }
+        - name: nginx-empty
+          emptyDir: { }
+        - name: nginx-run
+          emptyDir: { }
