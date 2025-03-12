@@ -6,5 +6,5 @@ spec:
   ports:
     - port: 8081
   selector:
-    app: my-portfolio-svc
+    app: my-portfolio
   type: ClusterIP
