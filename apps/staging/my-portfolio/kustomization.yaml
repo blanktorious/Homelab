@@ -3,4 +3,4 @@ kind: Kustomization
 namespace: my-portfolio
 resources:
   - ../../base/my-portfolio
-  - cloudflare.yaml
+#  - cloudflare.yaml
