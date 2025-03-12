@@ -19,7 +19,7 @@ spec:
       #   fsGroup: 101
       containers:
         - name: my-portfolio
-          image: blanktorious/my-port-v1:latest
+          image: blanktorious/my-port-v1:1.4
           ports:
             - containerPort: 8081
           
