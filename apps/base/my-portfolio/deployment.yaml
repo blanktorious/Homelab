@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: my-portfolio
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: my-portfolio
@@ -13,10 +13,10 @@ spec:
         app: my-portfolio
 
     spec:
-      securityContext:
-        runAsUser: 101
-        runAsGroup: 101
-        fsGroup: 101
+      # securityContext:
+      #   runAsUser: 101
+      #   runAsGroup: 101
+      #   fsGroup: 101
       containers:
         - name: my-portfolio
           image: blanktorious/my-port-v1:1.4
