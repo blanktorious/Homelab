@@ -68,7 +68,7 @@ data:
   config.yaml: |
     # Name of the tunnel you want to run
     
-    tunnel: ld-blnktrs-cflrd
+    tunnel: mp-blnktrs-cflrd
 
     credentials-file: /etc/cloudflared/creds/credentials.json
 
