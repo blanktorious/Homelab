@@ -14,9 +14,9 @@ spec:
 
     spec:
       securityContext:
-        runAsUser: 101  # UID for nginx
-        runAsGroup: 101  # GID for nginx
-        fsGroup: 101  # Ensures files created in shared volumes have correct group
+        runAsUser: 1000 # UID for nginx
+        runAsGroup: 1000 # GID for nginx
+        fsGroup: 1000 # Ensures files created in shared volumes have correct group
       containers:
         - name: my-portfolio
           image: blanktorious/my-port-v1:latest
