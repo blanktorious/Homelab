@@ -13,9 +13,13 @@ spec:
         app: my-portfolio
 
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
         - name: my-portfolio
-          image: blanktorious/my-port-v1:1.0
+          image: blanktorious/my-port-v1:latest
           ports:
             - containerPort: 8081
           
