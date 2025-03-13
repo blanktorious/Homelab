@@ -29,7 +29,9 @@ spec:
             # - mountPath: /etc/nginx/conf.d/
             #   name: nginx-dir
             - mountPath: /var/cache/nginx/client_temp
-              name: nginx-empty
+              name: nginx-client
+            - mountPath: /var/cache/nginx/proxy_temp
+              name: nginx-proxy
             - mountPath: /var/run/
               name: nginx-run
           
@@ -41,7 +43,9 @@ spec:
         #     claimName: my-portfolio-pv-claim
         # - name: nginx-dir
         #   emptyDir: { }
-        - name: nginx-empty
+        - name: nginx-client
+          emptyDir: { }
+        - name: nginx-proxy
           emptyDir: { }
         - name: nginx-run
           emptyDir: { }
