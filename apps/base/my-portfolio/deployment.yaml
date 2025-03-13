@@ -13,39 +13,39 @@ spec:
         app: my-portfolio
 
     spec:
-      securityContext:
-         runAsUser: 1000
-         runAsGroup: 1000
-         fsGroup: 1000
+      # securityContext:
+      #    runAsUser: 1000
+      #    runAsGroup: 1000
+      #    fsGroup: 1000
       containers:
         - name: my-portfolio
-          image: blanktorious/my-port-v1:1.6
+          image: blanktorious/my-port-v1:1.7
           ports:
             - containerPort: 8081
           
-          volumeMounts:
+          # volumeMounts:
             # - name: my-emptydir-volume
             #   mountPath: /etc/my-portfolio/data
             # - mountPath: /etc/nginx/conf.d/
             #   name: nginx-dir
-            - mountPath: /var/cache/nginx/client_temp
-              name: nginx-client
-            - mountPath: /var/cache/nginx/proxy_temp
-              name: nginx-proxy
-            - mountPath: /var/run/
-              name: nginx-run
+            # - mountPath: /var/cache/nginx/client_temp
+            #   name: nginx-client
+            # - mountPath: /var/cache/nginx/proxy_temp
+            #   name: nginx-proxy
+            # - mountPath: /var/run/
+            #   name: nginx-run
           
           securityContext:
             allowPrivilegeEsclation: false
-      volumes:
+      # volumes:
         # - name: my-portfolio-data
         #   persistentVolumeClaim:
         #     claimName: my-portfolio-pv-claim
         # - name: nginx-dir
         #   emptyDir: { }
-        - name: nginx-client
-          emptyDir: { }
-        - name: nginx-proxy
-          emptyDir: { }
-        - name: nginx-run
-          emptyDir: { }
+        # - name: nginx-client
+        #   emptyDir: { }
+        # - name: nginx-proxy
+        #   emptyDir: { }
+        # - name: nginx-run
+        #   emptyDir: { }
