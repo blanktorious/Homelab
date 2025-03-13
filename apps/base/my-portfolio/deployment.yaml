@@ -23,25 +23,25 @@ spec:
           ports:
             - containerPort: 8081
           
-          volumeMounts:
+          # volumeMounts:
             # - name: my-emptydir-volume
             #   mountPath: /etc/my-portfolio/data
-            - mountPath: /etc/nginx/conf.d/
-              name: nginx-dir
-            - mountPath: /var/cache/nginx/client_temp
-              name: nginx-empty
-            - mountPath: /var/run/
-              name: nginx-run
+            # - mountPath: /etc/nginx/conf.d/
+            #   name: nginx-dir
+            # - mountPath: /var/cache/nginx/client_temp
+            #   name: nginx-empty
+            # - mountPath: /var/run/
+            #   name: nginx-run
           
           securityContext:
             allowPrivilegeEsclation: false
-      volumes:
+      # volumes:
         # - name: my-portfolio-data
         #   persistentVolumeClaim:
         #     claimName: my-portfolio-pv-claim
-        - name: nginx-dir
-          emptyDir: { }
-        - name: nginx-empty
-          emptyDir: { }
-        - name: nginx-run
-          emptyDir: { }
+        # - name: nginx-dir
+        #   emptyDir: { }
+        # - name: nginx-empty
+        #   emptyDir: { }
+        # - name: nginx-run
+        #   emptyDir: { }
