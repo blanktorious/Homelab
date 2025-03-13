@@ -26,8 +26,8 @@ spec:
           volumeMounts:
             # - name: my-emptydir-volume
             #   mountPath: /etc/my-portfolio/data
-            - mountPath: /etc/nginx/conf.d/
-              name: nginx-dir
+            # - mountPath: /etc/nginx/conf.d/
+            #   name: nginx-dir
             - mountPath: /var/cache/nginx/client_temp
               name: nginx-empty
             - mountPath: /var/run/
@@ -39,8 +39,8 @@ spec:
         # - name: my-portfolio-data
         #   persistentVolumeClaim:
         #     claimName: my-portfolio-pv-claim
-        - name: nginx-dir
-          emptyDir: { }
+        # - name: nginx-dir
+        #   emptyDir: { }
         - name: nginx-empty
           emptyDir: { }
         - name: nginx-run
