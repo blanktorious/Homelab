@@ -1,38 +1,28 @@
+#Deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: linkding
+  name: private-registry
+  namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: linkding
+      app: private-registry
   template:
     metadata:
       labels:
-        app: linkding
-
+        app: private-registry
     spec:
-      securityContext:
-        fsGroup: 33 # www-data group ID
-        runAsUser: 33 # www-data user ID
-        runAsGroup: 33 # www-data group ID
       containers:
-        - name: linkding
-          image: sissbruecker/linkding:1.31.0
+        - name: registry
+          image: registry:2
           ports:
-            - containerPort: 9090
-          envFrom:
-            - secretRef: 
-                name: linkding-credentials
-          
+            - containerPort: 5000
           volumeMounts:
-            - name: linkding-data
-              mountPath: /etc/linkding/data
-          
-          securityContext:
-            allowPrivilegeEsclation: false
+            - name: registry-storage
+              mountPath: /var/lib/registry
       volumes:
-        - name: linkding-data
+        - name: registry-storage
           persistentVolumeClaim:
-            claimName: linkding-pv-claim
+            claimName: registry-pvc
