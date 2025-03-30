@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: registry-pvc
-  namespace: default
+  namespace: docker-registry
 spec:
   accessModes:
     - ReadWriteOnce
