@@ -33,7 +33,7 @@ spec:
       adminPassword: blanktorious
     ingress:
       enabled: true
-      ingressClassName: nginx
+      ingressClassName: traefik
       hosts:
         - grafana.blanktorious.com
       path: /
