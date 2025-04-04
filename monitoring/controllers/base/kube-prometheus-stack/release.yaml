@@ -31,9 +31,9 @@ spec:
   values:
     grafana:
       adminPassword: blanktorious
-    ingress:
-      enabled: true
-      ingressClassName: traefik
-      hosts:
-        - grafana.blanktorious.com
-      path: /
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        hosts:
+          - grafana.blanktorious.com
+        path: /
