@@ -31,3 +31,11 @@ spec:
   values:
     grafana:
       adminPassword: blanktorious
+    ingress:
+      enabled: true
+      annotations: 
+        kubernetes.io/ingress.class: traefik,
+        kubernetes.io/tls-acme: "true"
+      hosts:
+        - grafana.blanktorious.com
+      path: /
