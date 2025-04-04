@@ -33,9 +33,7 @@ spec:
       adminPassword: blanktorious
     ingress:
       enabled: true
-      annotations: 
-        kubernetes.io/ingress.class: traefik,
-        kubernetes.io/tls-acme: "true"
+      ingressClassName: nginx
       hosts:
         - grafana.blanktorious.com
       path: /
