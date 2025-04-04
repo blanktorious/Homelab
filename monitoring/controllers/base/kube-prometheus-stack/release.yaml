@@ -36,4 +36,3 @@ spec:
         ingressClassName: traefik
         hosts:
           - grafana.blanktorious.com
-        path: /
