@@ -7,11 +7,16 @@ spec:
   chart:
     spec:
       chart: harbor
-      version: 1.14.2
+      version: 2.12
       sourceRef:
         kind: HelmRepository
         name: harbor
-        namespace: flux-system
+        namespace: container-registry
+      interval: 12h
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
   values:
     expose:
       type: ingress
