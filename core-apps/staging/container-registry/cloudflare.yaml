@@ -37,7 +37,7 @@ spec:
       volumes:
       - name: creds
         secret:
-          secretName: tunnel-credentials
+          secretName: harbor-tunnel-credentials
 
       - name: config
         configMap:
