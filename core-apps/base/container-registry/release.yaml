@@ -27,7 +27,7 @@ spec:
         annotations:
 #          ingress.kubernetes.io/ssl-redirect: "true"
 #          traefik.ingress.kubernetes.io/router.entrypoints: websecure
-    externalURL: http://harbor.blanktorious.com
+    externalURL: https://harbor.blanktorious.com
     harborAdminPassword: "Harbor123"
     persistence:
       persistentVolumeClaim:
