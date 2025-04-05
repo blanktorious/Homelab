@@ -22,7 +22,7 @@ spec:
         className: traefik
         annotations:
           ingress.kubernetes.io/ssl-redirect: "true"
-          traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
 #          traefik.ingress.kubernetes.io/redirect-entry-point: websecure
     externalURL: https://harbor.blanktorious.com
     harborAdminPassword: harbor123
