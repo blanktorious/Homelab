@@ -3,35 +3,35 @@ kind: HelmRelease
 metadata:
   name: harbor
 spec:
-  interval: 30m
+  interval: 5m
   chart:
     spec:
       chart: harbor
-      version: "1.16.2"
+      version: 1.14.2
       sourceRef:
         kind: HelmRepository
         name: harbor
         namespace: container-registry
-      interval: 12h
-  install:
-    crds: Create
-  upgrade:
-    crds: CreateReplace
   values:
     expose:
       type: ingress
-      tls:
-        enabled: false
       ingress:
         hosts:
           core: harbor.blanktorious.com
+        controller: default
         className: traefik
         annotations:
-#          ingress.kubernetes.io/ssl-redirect: "false"
-#          traefik.ingress.kubernetes.io/router.entrypoints: web
+          ingress.kubernetes.io/ssl-redirect: "true"
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
     externalURL: https://harbor.blanktorious.com
-#    harborAdminPassword: "Harbor123"
+    harborAdminPassword: 'harbor123'
     persistence:
       persistentVolumeClaim:
         registry:
           size: 10Gi
+        chartmuseum:
+          enabled: false
+    notary:
+      enabled: false
+    trivy:
+      enabled: true
