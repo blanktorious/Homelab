@@ -18,6 +18,7 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
+    logLevel: debug
     expose:
       type: ingress
       ingress:
@@ -28,7 +29,7 @@ spec:
 #          ingress.kubernetes.io/ssl-redirect: "false"
 #          traefik.ingress.kubernetes.io/router.entrypoints: web
     externalURL: http://harbor.blanktorious.com
-    harborAdminPassword: "Harbor123"
+#    harborAdminPassword: "Harbor123"
     persistence:
       persistentVolumeClaim:
         registry:
