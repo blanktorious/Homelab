@@ -18,7 +18,6 @@ spec:
   upgrade:
     crds: CreateReplace
   values:
-    logLevel: debug
     expose:
       type: ingress
       ingress:
