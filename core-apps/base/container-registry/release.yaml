@@ -25,8 +25,8 @@ spec:
           core: harbor.blanktorious.com
         className: traefik
         annotations:
-          ingress.kubernetes.io/ssl-redirect: "false"
-          traefik.ingress.kubernetes.io/router.entrypoints: web
+#          ingress.kubernetes.io/ssl-redirect: "false"
+#          traefik.ingress.kubernetes.io/router.entrypoints: web
     externalURL: http://harbor.blanktorious.com
     harborAdminPassword: "Harbor123"
     persistence:
