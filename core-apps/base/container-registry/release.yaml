@@ -18,6 +18,8 @@ spec:
       ingress:
         hosts:
           core: harbor.blanktorious.com
+        tls:
+          enabled: false
         controller: default
         className: traefik
         annotations:
