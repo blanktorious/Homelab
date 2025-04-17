@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - linkding
 #  - my-portfolio
-#  - docker-registry
